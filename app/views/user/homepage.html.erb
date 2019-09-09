@@ -1,0 +1,24 @@
+<h1>Welcome to Connect 4</h1>
+
+<form method="POST" action="/game">
+
+<label for = "player_one_selector"> SELECT FIRST PLAYER! </label>
+<select name="player_one" id = "player_one_selector" type = "select" required = "required">
+   <option disabled selected value> --!select a player!-- </option>
+   <% @users.each do |player|%>
+       <option value = "<%= player.name %>">  "<%= player.name %>" </option>
+   <%end%>
+</select>
+
+
+<label for = "player_two_selector"> SELECT SECOND PLAYER! </label>
+<select name="player_two" id = "player_two_selector" type = "select" required = "required">
+   <option disabled selected value> --!select a player!-- </option>
+   <% @users.each do |player|%>
+       <option value = "<%= player.name %>">  "<%= player.name %>" </option>
+   <%end%>
+</select>
+
+<input type="submit">
+</form>
+<a href='/users/new'>New User? Click Here!</a>
